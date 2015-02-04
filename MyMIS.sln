@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMIS.Framework.Data", "MyM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMIS.Framework.Log", "MyMIS.Framework.Log\MyMIS.Framework.Log.csproj", "{DD4FF69A-EF8A-486C-A316-89329DDBB63D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{B9A8A7BC-A50F-4A1B-A4EA-BE0430E12E9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

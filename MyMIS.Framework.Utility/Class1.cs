@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyMIS.Framework.Utility
 {
+    /// <summary>
+    /// HAH
+    /// </summary>
     public class Class1
     {
     }

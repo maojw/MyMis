@@ -44,9 +44,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DLL\log4net.dll" />
+    <Content Include="GhostDoc_v4.9\GhostDoc v4.9.14262.exe" />
+    <Content Include="系统初始化脚本\1、MyMIS创建表脚本.sql" />
+    <Content Include="系统初始化脚本\2、MyMIS创建数据库对象脚本.sql" />
+    <Content Include="系统初始化脚本\3、MyMIS数据初始化脚本.sql" />
+    <Content Include="项目小平台\C# To VB.exe" />
+    <Content Include="项目小平台\config.xml" />
+    <Content Include="项目小平台\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="项目小平台\Map.Extensions.js" />
+    <Content Include="项目小平台\Mysoft.Map.Extensions.dll" />
+    <Content Include="项目小平台\Mysoft.Map.Extensions.pdb" />
+    <Content Include="项目小平台\Mysoft.Map.Extensions.XML" />
+    <Content Include="项目小平台\XmlCommand管理工具\ICSharpCode.TextEditor.dll" />
+    <Content Include="项目小平台\XmlCommand管理工具\Mysoft.MAP2.Data.dll" />
+    <Content Include="项目小平台\XmlCommand管理工具\Mysoft.MAP2.Infrastructure.dll" />
+    <Content Include="项目小平台\XmlCommand管理工具\Mysoft.MAP2.ServiceFramework.EntityBase.dll" />
+    <Content Include="项目小平台\XmlCommand管理工具\XmlCommandTool.exe" />
+    <Content Include="项目小平台\代码生成器.exe" />
+    <Content Include="项目小平台\典型页面创建工具.exe" />
+    <Content Include="项目小平台\小平台修改日志.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Craig-s-Utility-Library-master.zip" />
     <None Include="DLL\log4net.config" />
+    <None Include="项目小平台\Instant_VB_Groups.dat" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

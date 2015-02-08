@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Item Name=".\sql2008@demo2" ConnectionString="Password=95938;Persist Security Info=True;User ID=sa;Initial Catalog=demo2;Data Source=.\sql2008" />
+  <Item Name="10.5.10.75\SQL2008r2_sz@dotnet_erp301_szjzy" ConnectionString="Password=95938;Persist Security Info=True;User ID=team_sz;Initial Catalog=dotnet_erp301_szjzy;Data Source=10.5.10.75\SQL2008r2_sz" />
+  <Item Name="10.5.10.75\SQL2008r2_sz@dotnet_erp305sp1_szlj" ConnectionString="Password=95938;Persist Security Info=True;User ID=TEAM_SZ;Initial Catalog=dotnet_erp305sp1_szlj;Data Source=10.5.10.75\SQL2008r2_sz" />
+</Config>

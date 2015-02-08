@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MyMIS.Map.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="MyMISMapModelStoreContainer">
+          <EntitySet Name="AppFunction" EntityType="MyMIS.Map.Model.Store.AppFunction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Authority" EntityType="MyMIS.Map.Model.Store.Authority" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BusinessApp" EntityType="MyMIS.Map.Model.Store.BusinessApp" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organization" EntityType="MyMIS.Map.Model.Store.Organization" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="MyMIS.Map.Model.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RoleAuth" EntityType="MyMIS.Map.Model.Store.RoleAuth" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="MyMIS.Map.Model.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="MyMIS.Map.Model.Store.UserRole" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AppFunction">
+          <Key>
+            <PropertyRef Name="AppFunctionGUID" />
+          </Key>
+          <Property Name="AppFunctionGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BusinessAppGUID" Type="uniqueidentifier" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FunctionCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="FunctionShortCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsDisabled" Type="tinyint" />
+          <Property Name="DisabledReason" Type="nvarchar" MaxLength="400" />
+          <Property Name="FunctionUrl" Type="nvarchar" MaxLength="400" />
+          <Property Name="FunctionIcon" Type="nvarchar" MaxLength="100" />
+          <Property Name="IconClass" Type="nvarchar" MaxLength="30" />
+          <Property Name="IconClssUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Authority">
+          <Key>
+            <PropertyRef Name="AuthorityGUID" />
+          </Key>
+          <Property Name="AuthorityGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AuthorityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="AuthorityName" Type="nvarchar" MaxLength="200" />
+          <Property Name="AppFunctionGUID" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="BusinessApp">
+          <Key>
+            <PropertyRef Name="BusinessAppGUID" />
+          </Key>
+          <Property Name="BusinessAppGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BusinessAppName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BusinessAppCode" Type="nvarchar" MaxLength="200" />
+          <Property Name="BusinessAppShortCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ParentGUID" Type="uniqueidentifier" />
+          <Property Name="IsDisabled" Type="tinyint" />
+          <Property Name="DisabledReason" Type="nvarchar" MaxLength="400" />
+          <Property Name="AppUrl" Type="nvarchar" MaxLength="400" />
+          <Property Name="AppIcon" Type="nvarchar" MaxLength="100" />
+          <Property Name="IconClass" Type="nvarchar" MaxLength="30" />
+          <Property Name="IconClassUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="OrgGUID" />
+          </Key>
+          <Property Name="OrgGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrgCode" Type="nchar" MaxLength="10" />
+          <Property Name="OrgName" Type="nchar" MaxLength="10" />
+          <Property Name="ParentGUID" Type="uniqueidentifier" />
+          <Property Name="OrgType" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleGUID" />
+          </Key>
+          <Property Name="RoleGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="RoleAuth">
+          <Key>
+            <PropertyRef Name="RoleAuthGUID" />
+          </Key>
+          <Property Name="RoleAuthGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleGUID" Type="uniqueidentifier" />
+          <Property Name="AuthorityGUID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserGUID" />
+          </Key>
+          <Property Name="UserGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="PassWord" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrgGUID" Type="uniqueidentifier" />
+          <Property Name="PhotoUrl" Type="nvarchar" MaxLength="200" />
+          <Property Name="OfficePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="TelPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="HomePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="QQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsLocked" Type="tinyint" />
+          <Property Name="LockedReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsDisabled" Type="tinyint" />
+          <Property Name="DisabledReason" Type="nvarchar" MaxLength="500" />
+          <Property Name="Gender" Type="tinyint" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="uniqueidentifier" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="uniqueidentifier" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleGUID" />
+          </Key>
+          <Property Name="UserRoleGUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserGUID" Type="uniqueidentifier" />
+          <Property Name="RoleGUID" Type="uniqueidentifier" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyMIS.Map.Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DataModelContainer" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AppFunction" EntityType="MyMIS.Map.Model.AppFunction" />
+          <EntitySet Name="Authority" EntityType="MyMIS.Map.Model.Authority" />
+          <EntitySet Name="BusinessApp" EntityType="MyMIS.Map.Model.BusinessApp" />
+          <EntitySet Name="Organization" EntityType="MyMIS.Map.Model.Organization" />
+          <EntitySet Name="Role" EntityType="MyMIS.Map.Model.Role" />
+          <EntitySet Name="RoleAuth" EntityType="MyMIS.Map.Model.RoleAuth" />
+          <EntitySet Name="User" EntityType="MyMIS.Map.Model.User" />
+          <EntitySet Name="UserRole" EntityType="MyMIS.Map.Model.UserRole" />
+        </EntityContainer>
+        <EntityType Name="AppFunction">
+          <Key>
+            <PropertyRef Name="AppFunctionGUID" />
+          </Key>
+          <Property Name="AppFunctionGUID" Type="Guid" Nullable="false" />
+          <Property Name="BusinessAppGUID" Type="Guid" />
+          <Property Name="FunctionName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionCode" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionShortCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IsDisabled" Type="Byte" />
+          <Property Name="DisabledReason" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionUrl" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="FunctionIcon" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IconClass" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="IconClssUrl" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Authority">
+          <Key>
+            <PropertyRef Name="AuthorityGUID" />
+          </Key>
+          <Property Name="AuthorityGUID" Type="Guid" Nullable="false" />
+          <Property Name="AuthorityCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AuthorityName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="AppFunctionGUID" Type="Guid" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BusinessApp">
+          <Key>
+            <PropertyRef Name="BusinessAppGUID" />
+          </Key>
+          <Property Name="BusinessAppGUID" Type="Guid" Nullable="false" />
+          <Property Name="BusinessAppName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BusinessAppCode" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="BusinessAppShortCode" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ParentGUID" Type="Guid" />
+          <Property Name="IsDisabled" Type="Byte" />
+          <Property Name="DisabledReason" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="AppUrl" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="AppIcon" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IconClass" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="IconClassUrl" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="Remark" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="OrgGUID" />
+          </Key>
+          <Property Name="OrgGUID" Type="Guid" Nullable="false" />
+          <Property Name="OrgCode" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="OrgName" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ParentGUID" Type="Guid" />
+          <Property Name="OrgType" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleGUID" />
+          </Key>
+          <Property Name="RoleGUID" Type="Guid" Nullable="false" />
+          <Property Name="RoleCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoleName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="RoleAuth">
+          <Key>
+            <PropertyRef Name="RoleAuthGUID" />
+          </Key>
+          <Property Name="RoleAuthGUID" Type="Guid" Nullable="false" />
+          <Property Name="RoleGUID" Type="Guid" />
+          <Property Name="AuthorityGUID" Type="Guid" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserGUID" />
+          </Key>
+          <Property Name="UserGUID" Type="Guid" Nullable="false" />
+          <Property Name="UserCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="PassWord" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OrgGUID" Type="Guid" />
+          <Property Name="PhotoUrl" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OfficePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="TelPhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="QQ" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="IsLocked" Type="Byte" />
+          <Property Name="LockedReason" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsDisabled" Type="Byte" />
+          <Property Name="DisabledReason" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="Byte" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Guid" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Guid" />
+          <Property Name="Remark" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleGUID" />
+          </Key>
+          <Property Name="UserRoleGUID" Type="Guid" Nullable="false" />
+          <Property Name="UserGUID" Type="Guid" />
+          <Property Name="RoleGUID" Type="Guid" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyMISMapModelStoreContainer" CdmEntityContainer="DataModelContainer">
+          <EntitySetMapping Name="AppFunction">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.AppFunction">
+              <MappingFragment StoreEntitySet="AppFunction">
+                <ScalarProperty Name="AppFunctionGUID" ColumnName="AppFunctionGUID" />
+                <ScalarProperty Name="BusinessAppGUID" ColumnName="BusinessAppGUID" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="FunctionCode" ColumnName="FunctionCode" />
+                <ScalarProperty Name="FunctionShortCode" ColumnName="FunctionShortCode" />
+                <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+                <ScalarProperty Name="DisabledReason" ColumnName="DisabledReason" />
+                <ScalarProperty Name="FunctionUrl" ColumnName="FunctionUrl" />
+                <ScalarProperty Name="FunctionIcon" ColumnName="FunctionIcon" />
+                <ScalarProperty Name="IconClass" ColumnName="IconClass" />
+                <ScalarProperty Name="IconClssUrl" ColumnName="IconClssUrl" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authority">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.Authority">
+              <MappingFragment StoreEntitySet="Authority">
+                <ScalarProperty Name="AuthorityGUID" ColumnName="AuthorityGUID" />
+                <ScalarProperty Name="AuthorityCode" ColumnName="AuthorityCode" />
+                <ScalarProperty Name="AuthorityName" ColumnName="AuthorityName" />
+                <ScalarProperty Name="AppFunctionGUID" ColumnName="AppFunctionGUID" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessApp">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.BusinessApp">
+              <MappingFragment StoreEntitySet="BusinessApp">
+                <ScalarProperty Name="BusinessAppGUID" ColumnName="BusinessAppGUID" />
+                <ScalarProperty Name="BusinessAppName" ColumnName="BusinessAppName" />
+                <ScalarProperty Name="BusinessAppCode" ColumnName="BusinessAppCode" />
+                <ScalarProperty Name="BusinessAppShortCode" ColumnName="BusinessAppShortCode" />
+                <ScalarProperty Name="ParentGUID" ColumnName="ParentGUID" />
+                <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+                <ScalarProperty Name="DisabledReason" ColumnName="DisabledReason" />
+                <ScalarProperty Name="AppUrl" ColumnName="AppUrl" />
+                <ScalarProperty Name="AppIcon" ColumnName="AppIcon" />
+                <ScalarProperty Name="IconClass" ColumnName="IconClass" />
+                <ScalarProperty Name="IconClassUrl" ColumnName="IconClassUrl" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organization">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="OrgGUID" ColumnName="OrgGUID" />
+                <ScalarProperty Name="OrgCode" ColumnName="OrgCode" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="ParentGUID" ColumnName="ParentGUID" />
+                <ScalarProperty Name="OrgType" ColumnName="OrgType" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleGUID" ColumnName="RoleGUID" />
+                <ScalarProperty Name="RoleCode" ColumnName="RoleCode" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleAuth">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.RoleAuth">
+              <MappingFragment StoreEntitySet="RoleAuth">
+                <ScalarProperty Name="RoleAuthGUID" ColumnName="RoleAuthGUID" />
+                <ScalarProperty Name="RoleGUID" ColumnName="RoleGUID" />
+                <ScalarProperty Name="AuthorityGUID" ColumnName="AuthorityGUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="OrgGUID" ColumnName="OrgGUID" />
+                <ScalarProperty Name="PhotoUrl" ColumnName="PhotoUrl" />
+                <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+                <ScalarProperty Name="TelPhone" ColumnName="TelPhone" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+                <ScalarProperty Name="LockedReason" ColumnName="LockedReason" />
+                <ScalarProperty Name="IsDisabled" ColumnName="IsDisabled" />
+                <ScalarProperty Name="DisabledReason" ColumnName="DisabledReason" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRole">
+            <EntityTypeMapping TypeName="MyMIS.Map.Model.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleGUID" ColumnName="UserRoleGUID" />
+                <ScalarProperty Name="UserGUID" ColumnName="UserGUID" />
+                <ScalarProperty Name="RoleGUID" ColumnName="RoleGUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

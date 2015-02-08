@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - 我的 ASP.NET MVC 应用程序</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <meta name="viewport" content="width=device-width" />
+    <!-- jquery -->
+    <script type="text/javascript" src="~/Content/JavaScript/jquery.min.js"></script>
+
+    <!-- AmazeUI -->
+    <script type="text/javascript" src="~/Content/AmazeUI/assets/js/amazeui.min.js"></script>
+    <link href="~/Content/AmazeUI/assets/css/amazeui.min.css" rel="stylesheet" />
+
+    <!-- knockout -->
+    <script type="text/javascript" src="~/Content/Script/knockout-2.1.0.js"></script>
+
+</head>
+<body>
+    <header class="am-topbar am-topbar-inverse">
+        <h1 class="am-topbar-brand">
+            <a href="#">Amaze UI</a>
+        </h1>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li class="am-active"><a href="#">首页</a></li>
+                <li><a href="#">项目</a></li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">下拉 <span class="am-icon-caret-down"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li class="am-dropdown-header">标题</li>
+                        <li><a href="#">1. 去月球</a></li>
+                        <li class="am-active"><a href="#">2. 去火星</a></li>
+                        <li><a href="#">3. 还是回地球</a></li>
+                        <li class="am-disabled"><a href="#">4. 下地狱</a></li>
+                        <li class="am-divider"></li>
+                        <li><a href="#">5. 桥头一回首</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="am-topbar-form am-topbar-left am-form-inline" role="search">
+                <div class="am-form-group">
+                    <input type="text" class="am-form-field am-input-sm" placeholder="搜索">
+                </div>
+            </form>
+
+            <div class="am-topbar-right">
+                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
+                    <button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle>其他 <span class="am-icon-caret-down"></span></button>
+                    <ul class="am-dropdown-content">
+                        <li><a href="#">注册</a></li>
+                        <li><a href="#">随便看看</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="am-topbar-right">
+                <button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+            </div>
+        </div>
+    </header>
+    
+
+
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">将你的徽标放置在此处</p>
+        </div>
+        <div class="float-right">
+            <section id="login">
+                你好!
+            </section>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET MVC 应用程序</p>
+        </div>
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+    <footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
+        <div class="am-footer-switch">
+            <span class="am-footer-ysp" data-rel="mobile" data-am-modal="{target: '#am-switch-mode'}">云适配版</span>
+            <span class="am-footer-divider">|</span>
+            <a id="godesktop" data-rel="desktop" class="am-footer-desktop"
+                href="javascript:">电脑版</a>
+        </div>
+        <div class="am-footer-miscs ">
+            <p>
+                由
+      <a href="http://www.yunshipei.com/" title="诺亚方舟" target="_blank" class="">诺亚方舟</a>提供技术支持
+            </p>
+            <p>CopyRight©2014 AllMobilize Inc.</p>
+            <p>京ICP备13033158</p>
+        </div>
+    </footer>
+</body>
+</html>

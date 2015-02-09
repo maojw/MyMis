@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +45,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataAnnotations\PasswordAttribute.cs" />
+    <Compile Include="Data\AnyRadixConvert.cs" />
+    <Compile Include="Data\CheckExistsType.cs" />
+    <Compile Include="Data\CombHelper.cs" />
+    <Compile Include="Data\Compression.cs" />
+    <Compile Include="Data\JsonHelper.cs" />
+    <Compile Include="Data\MathHelper.cs" />
+    <Compile Include="Data\OperationResult.cs" />
+    <Compile Include="Data\OperationResultType.cs" />
+    <Compile Include="Data\PageCondition.cs" />
+    <Compile Include="Data\SerializeHelper.cs" />
+    <Compile Include="Data\Singleton.cs" />
+    <Compile Include="Data\SingletonDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SingletonList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Data\SortCondition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ExceptionMessage.cs" />
+    <Compile Include="Exceptions\OSharpException.cs" />
+    <Compile Include="Extensions\AssemblyExtensions.cs" />
+    <Compile Include="Extensions\BooleanExtensions.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Extensions\LinqToXmlExtensions.cs" />
+    <Compile Include="Extensions\MemoryCacheExtensions.cs" />
     <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Extensions\ParamterCheckExtensions.cs" />
+    <Compile Include="Extensions\RandomExtensions.cs" />
+    <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\ThreadExtensions.cs" />
+    <Compile Include="Extensions\TryCatchExtensions.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filter\FilterGroup.cs" />
+    <Compile Include="Filter\FilterHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filter\FilterOperate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filter\FilterRule.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filter\OperateCodeAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Filter\QueryablePropertySorter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\ILoggerAdapter.cs" />
@@ -50,6 +110,13 @@
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secutiry\CommunicationCryptor.cs" />
+    <Compile Include="Secutiry\DesHelper.cs" />
+    <Compile Include="Secutiry\HashHelper.cs" />
+    <Compile Include="Secutiry\RsaHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

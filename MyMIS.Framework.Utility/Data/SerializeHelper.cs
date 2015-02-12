@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Xml.Serialization;
 
+using MyMIS.Framework.Utility.Extensions;
 
 namespace MyMIS.Framework.Utility.Data
 {

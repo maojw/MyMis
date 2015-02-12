@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
 
+using MyMIS.Framework.Utility.Extensions;
+using MyMIS.Framework.Utility.Properties;
+
 namespace MyMIS.Framework.Utility.Logging
 {
     /// <summary>

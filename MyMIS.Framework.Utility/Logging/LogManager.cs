@@ -3,6 +3,8 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
+using MyMIS.Framework.Utility.Extensions;
+
 namespace MyMIS.Framework.Utility.Logging
 {
     /// <summary>

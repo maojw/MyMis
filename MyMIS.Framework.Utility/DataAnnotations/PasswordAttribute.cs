@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
+using MyMIS.Framework.Utility.Extensions;
+
 namespace MyMIS.Framework.Utility.DataAnnotations
 {
     /// <summary>

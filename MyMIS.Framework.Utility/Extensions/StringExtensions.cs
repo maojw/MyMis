@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 using Newtonsoft.Json;
+using MyMIS.Framework.Utility.Secutiry;
 
 namespace MyMIS.Framework.Utility.Extensions
 {

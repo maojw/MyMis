@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyMIS.Framework.Utility.Exceptions;
+using MyMIS.Framework.Utility.Properties;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,7 +67,7 @@ namespace MyMIS.Framework.Utility.Filter
                 PropertyInfo property = type.GetProperty(propertyName);
                 if (property == null)
                 {
-                    throw new OSharpException(string.Format(Resources.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
+                    throw new MyMISException(string.Format(Resources.ObjectExtensions_PropertyNameNotExistsInType, propertyName));
                 }
                 type = property.PropertyType;
                 propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);

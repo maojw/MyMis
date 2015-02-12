@@ -6,6 +6,9 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 
+using MyMIS.Framework.Utility.Extensions;
+
+
 namespace MyMIS.Framework.Utility.Data
 {
     /// <summary>

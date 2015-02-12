@@ -30,13 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\ComparisonHelper.cs" />
+    <Compile Include="Collections\EqualityHelper.cs" />
     <Compile Include="DataAnnotations\PasswordAttribute.cs" />
     <Compile Include="Data\AnyRadixConvert.cs" />
     <Compile Include="Data\CheckExistsType.cs" />
@@ -66,8 +71,15 @@
     <Compile Include="Data\SortCondition.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Develop\CodeRamer.cs" />
+    <Compile Include="Develop\CodeTimer.cs" />
+    <Compile Include="Disposable.cs" />
+    <Compile Include="Drawing\ValidateCoder.cs" />
+    <Compile Include="Drawing\ValidateCodeType.cs" />
+    <Compile Include="Dynamic\Exposed.cs" />
+    <Compile Include="Dynamic\MetaObject.cs" />
     <Compile Include="Exceptions\ExceptionMessage.cs" />
-    <Compile Include="Exceptions\OSharpException.cs" />
+    <Compile Include="Exceptions\MyMISException.cs" />
     <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\BooleanExtensions.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
@@ -101,6 +113,8 @@
     <Compile Include="Filter\QueryablePropertySorter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IO\DirectoryHelper.cs" />
+    <Compile Include="IO\FileHelper.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\ILoggerAdapter.cs" />
@@ -109,14 +123,34 @@
     <Compile Include="Logging\LoggerAdapterBase.cs" />
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Net\IpLocation.cs" />
+    <Compile Include="Net\IpLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reflection\FastInvokeHandler.cs" />
     <Compile Include="Secutiry\CommunicationCryptor.cs" />
     <Compile Include="Secutiry\DesHelper.cs" />
     <Compile Include="Secutiry\HashHelper.cs" />
     <Compile Include="Secutiry\RsaHelper.cs" />
+    <Compile Include="Web\UserAgentHelper.cs" />
+    <Compile Include="Windows\RegistryBaseKey.cs" />
+    <Compile Include="Windows\RegistryHelper.cs" />
+    <Compile Include="Windows\SystemInfo.cs" />
+    <Compile Include="Windows\SystemInfoHandler.cs" />
+    <Compile Include="Windows\WMIPath.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

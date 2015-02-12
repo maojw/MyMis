@@ -4,6 +4,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
+using MyMIS.Framework.Utility.Extensions;
+
 namespace MyMIS.Framework.Utility.Secutiry
 {
     /// <summary>

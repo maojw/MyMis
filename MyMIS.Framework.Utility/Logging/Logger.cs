@@ -3,6 +3,8 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 
+using MyMIS.Framework.Utility.Extensions;
+
 namespace MyMIS.Framework.Utility.Logging
 {
     /// <summary>

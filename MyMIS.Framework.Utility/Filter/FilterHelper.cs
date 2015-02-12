@@ -5,6 +5,10 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
+using MyMIS.Framework.Utility.Extensions;
+using MyMIS.Framework.Utility.Properties;
+using MyMIS.Framework.Utility.Exceptions;
+
 namespace MyMIS.Framework.Utility.Filter
 {
     /// <summary>
@@ -174,7 +178,7 @@ namespace MyMIS.Framework.Utility.Filter
             {
                 return bodys.Aggregate(Expression.OrElse);
             }
-            throw new OSharpException(Resources.Filter_GroupOperateError);
+            throw new MyMISException(Resources.Filter_GroupOperateError);
         }
 
         private static Expression GetExpressionBody(ParameterExpression param, FilterRule rule)
@@ -198,7 +202,7 @@ namespace MyMIS.Framework.Utility.Filter
                 PropertyInfo property = type.GetProperty(propertyName);
                 if (property == null)
                 {
-                    throw new OSharpException(string.Format(Resources.Filter_RuleFieldInTypeNotFound, rule.Field, type.FullName));
+                    throw new MyMISException(string.Format(Resources.Filter_RuleFieldInTypeNotFound, rule.Field, type.FullName));
                 }
                 type = property.PropertyType;
                 propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);

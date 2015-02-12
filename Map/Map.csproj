@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Sys\Controllers\IndexController.cs" />
+    <Compile Include="Areas\Sys\Controllers\LoginController.cs" />
     <Compile Include="Areas\Sys\SysAreaRegistration.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,9 +201,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Sys\Controllers\" />
     <Folder Include="Areas\Sys\Models\" />
-    <Folder Include="Areas\Sys\Views\Shared\" />
     <Folder Include="Content\Css\" />
     <Folder Include="Content\Images\" />
     <Folder Include="Models\" />
@@ -236,6 +236,21 @@
     <Content Include="Content\AmazeUI\assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\AmazeUI\assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\AmazeUI\assets\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys\Views\Index\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys\Views\Shared\_Footer.cshtml" />
+    <Content Include="Areas\Sys\Views\Shared\_Header.cshtml" />
+    <Content Include="Areas\Sys\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Sys\Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys\Views\Login\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

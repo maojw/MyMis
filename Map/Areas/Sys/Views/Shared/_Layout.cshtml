@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - MyMIS管理信息系统</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <meta name="viewport" content="width=device-width" />
+    <!-- jquery -->
+    <script type="text/javascript" src="~/Content/JavaScript/jquery.min.js"></script>
+
+    <!-- AmazeUI -->
+    <script type="text/javascript" src="~/Content/AmazeUI/assets/js/amazeui.min.js"></script>
+    <link href="~/Content/AmazeUI/assets/css/amazeui.min.css" rel="stylesheet" />
+
+    <!-- knockout -->
+    <script type="text/javascript" src="~/Content/Script/knockout-2.1.0.js"></script>
+
+</head>
+<body>
+    <!-- header -->
+    <div id="divHeader">
+        @Html.Partial("_Header")
+    </div>   
+
+    <div id="divContent">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <!-- footer -->
+    <div id="divFooter">
+        @Html.Partial("_Footer")
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

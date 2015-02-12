@@ -17,7 +17,7 @@ namespace Map.Areas.Sys
             context.MapRoute(
                 "Sys_default",
                 "Sys/{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                new { controller = "Index", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
